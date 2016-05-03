@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/_PROJECT/Scenes/Z0F0_TestZone.unity
+  isLoaded: 1
+  isActive: 1
