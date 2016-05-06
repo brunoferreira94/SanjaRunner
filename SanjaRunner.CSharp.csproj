@@ -212,6 +212,10 @@
     <Compile Include="Assets\_PROJECT\Scripts\Entities\PersistentBehaviour.cs" />
     <Compile Include="Assets\_PROJECT\Scripts\Player\PlayerInput.cs" />
     <Compile Include="Assets\_PROJECT\Scripts\Player\PlayerMotor.cs" />
+    <Compile Include="Assets\_PROJECT\Scripts\Systems\ButtonBehaviour.cs" />
+    <Compile Include="Assets\_PROJECT\Scripts\Systems\MapBackgroundCollider.cs" />
+    <Compile Include="Assets\_PROJECT\Scripts\Systems\MapBehaviour.cs" />
+    <Compile Include="Assets\_PROJECT\Scripts\Systems\SectorBehaviour.cs" />
     <Compile Include="Assets\_STANDARD ASSETS\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
     <Compile Include="Assets\_STANDARD ASSETS\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
     <Compile Include="Assets\_STANDARD ASSETS\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />

@@ -5,6 +5,7 @@ public class PlayerMotor : MonoBehaviour
     [Header("Movement Settings")]
     public float Acceleration = 5f;
     public float MaxSpeed = 15;
+    public float GravityForce = 15f;
     [Header("Jump Settings")]
     public float JumpForce = 10f;
     public int MidAirJumps = 1;
@@ -21,7 +22,8 @@ public class PlayerMotor : MonoBehaviour
     private int _timesJumped;
     private bool _isGrounded;
     private bool _canSink;
-
+    private RaycastHit2D _rhit;
+    
     private static PlayerMotor _instance;
 
     public static PlayerMotor GetInstance()
@@ -45,9 +47,12 @@ public class PlayerMotor : MonoBehaviour
     // Estamos no chão? Vamos projetar uma caixa invisível para baixo. Se ela acertar alguma coisa, estamos no chão.
     void GroundedCheck()
     {
-        // BoxCast retorna TRUE se acertar algo, FALSE se não acertar nada.
-        _isGrounded = Physics2D.BoxCast(_transform.position, GroundBoxCastSize, 0, Vector2.down, GroundBoxCastDistance,
+        // BoxCast retorna RaycastHit2D.
+        _rhit = Physics2D.BoxCast(_transform.position, GroundBoxCastSize, 0, Vector2.down, GroundBoxCastDistance,
             WorldMask);
+
+        // Se BoxCast retornou algo, _isGrounded será TRUE. Caso contrário, será FALSE.
+        _isGrounded = _rhit;
 
         // Se encostamos no chão, vamos resetar o contador de saltos.
         if (_isGrounded)
@@ -76,6 +81,19 @@ public class PlayerMotor : MonoBehaviour
         _rigidbody.velocity = velocity;
     }
 
+    // Aplicando força gravitacional contra superfície no pé, se ela existir
+    void ApplyGravityAgainstSurface()
+    {
+        if (_rhit)
+        {
+            _rigidbody.AddForce(-_rhit.normal * GravityForce);
+        }
+        else
+        {
+            _rigidbody.AddForce(Vector2.down * GravityForce);
+        }
+    }
+
     public void Jump()
     {
         if (_timesJumped < MidAirJumps)
@@ -102,5 +120,9 @@ public class PlayerMotor : MonoBehaviour
     {
         GroundedCheck();
         ApplyConstantForce();
+        ApplyGravityAgainstSurface();
+
+        // Não vamos utilizar a gravidade do Rigidbody.
+        _rigidbody.gravityScale = 0;
     }
 }

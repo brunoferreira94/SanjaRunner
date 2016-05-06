@@ -13,18 +13,20 @@ public class LevelBehaviour : MonoBehaviour
     public Transform BGCameraTransform;
 
     private Transform _playerTransform;
-    private float _levelProgress; // Precisa ser travado entre 0 e 1.
+    private float _levelProgress;
 
     void Start()
     {
         _playerTransform = PlayerMotor.GetInstance().GetTransform();
     }
 
+    // Atualizamos a posição do fundo aqui.
     void UpdateBackground()
     {
         BGCameraTransform.position = Vector3.Lerp(BGStartPoint.position, BGEndPoint.position, _levelProgress);
     }
 
+    // Calculamos o progresso do jogador na fase aqui, em _levelProgress, de 0 a 1.
     void CalculateLevelProgress()
     {
         if (!_playerTransform)
