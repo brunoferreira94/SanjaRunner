@@ -6,9 +6,16 @@ public class CameraBehaviour : MonoBehaviour
     public float LerpRate;
 
     private Transform _transform;
+    private static CameraBehaviour _instance;
+
+    public static CameraBehaviour GetInstance()
+    {
+        return _instance;
+    }
 
     void Awake()
     {
+        _instance = this;
         _transform = GetComponent<Transform>();
     }
 

@@ -5,27 +5,52 @@ using UnityEngine;
 
 public class SectorBehaviour : MonoBehaviour
 {
+    public bool IsLocked;
     public Vector3 GrowScale;
     public ButtonBehaviour[] Buttons;
 
     private Transform _transform;
-    private PersistentBehaviour _pb;
+    //private PersistentBehaviour _pb;
     private bool _canTrigger = true;
     private Vector3 _startingPosition;
     private Vector3 _startingScale;
     private MapBehaviour _mb;
+    private SpriteRenderer _sprite;
 
     void Awake()
     {
         _transform = GetComponent<Transform>();
         _startingPosition = _transform.localPosition;
         _startingScale = _transform.localScale;
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
         _mb = MapBehaviour.GetInstance();
-        _pb = PersistentBehaviour.GetInstance();
+        //_pb = PersistentBehaviour.GetInstance();
+    }
+
+    public void UpdateLockedStatus()
+    {
+        if (IsLocked)
+        {
+            _sprite.color = new Color(0.25f, 0.25f, 0.25f, 1);
+        }
+        else
+        {
+            _sprite.color = Color.white;
+        }
+    }
+
+    public void UnlockLevels(int levels)
+    {
+        for (int counter = 0; counter < Buttons.Length; counter++)
+        {
+            ButtonBehaviour cur = Buttons[counter];
+            cur.IsLocked = !(counter <= levels);
+            cur.UpdateStatus();
+        }
     }
 
     public void Shrink()
@@ -63,7 +88,7 @@ public class SectorBehaviour : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (_canTrigger)
+        if (_canTrigger && !IsLocked)
         {
             _canTrigger = false;
             _transform.DOScale(GrowScale, 0.5f);

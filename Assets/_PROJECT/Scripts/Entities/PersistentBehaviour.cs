@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
 
@@ -34,8 +35,13 @@ public class PersistentBehaviour : MonoBehaviour
         if (!_hasInitialized)
         {
             _hasInitialized = true;
-            Application.LoadLevel(1);
+            Invoke("Initialize", 2);
         }
+    }
+
+    void Initialize()
+    {
+        Application.LoadLevel(1);
     }
 
     // This is automatically called by Unity. As soon as we load a level, we'll fade out the black screen.
@@ -61,10 +67,22 @@ public class PersistentBehaviour : MonoBehaviour
         StartCoroutine(ChangeLevel_Coroutine(level, fadeTime));
     }
 
+    public void ChangeLevel(string level, float fadeTime)
+    {
+        StartCoroutine(ChangeLevel_Coroutine(level, fadeTime));
+    }
+
     IEnumerator ChangeLevel_Coroutine(int level, float fadeTime)
     {
         FadeIn(fadeTime, 0.0f);
         yield return new WaitForSeconds(2.0f);
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level);
+    }
+
+    IEnumerator ChangeLevel_Coroutine(string level, float fadeTime)
+    {
+        FadeIn(fadeTime, 0.0f);
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene(level);
     }
 }

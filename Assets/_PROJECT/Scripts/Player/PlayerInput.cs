@@ -1,26 +1,12 @@
-﻿using UnityEngine;
-
-// Struct usado para passar o comando para o motor
-public struct PlayerCommand
-{
-    public bool SwipeDown;
-    public bool Touch;
-}
+﻿using HedgehogTeam.EasyTouch;
+using UnityEngine;
 
 // RequireComponent diz que um componente depende de outro. Criar um componente do tipo PlayerInput automaticamente cria um do tipo PlayerMotor.
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerInput : MonoBehaviour
 {
-    // Header adiciona uma "categoria" em negrito no Inspector do Unity.
-    [Header("Input Settings")]
-    public bool UseKeyboard;
-
-    [Header("Keyboard-specific settings")]
-    public string SwipeDownKey;
-    public string TouchKey;
-
     private PlayerMotor _motor;
-    private PlayerCommand _cmd;
+    private bool _canSwipeUp;
 
     // Awake, chamado na inicialização da cena. É chamado antes de Start.
     // Start é chamado logo após o primeiro quadro do jogo.
@@ -28,49 +14,48 @@ public class PlayerInput : MonoBehaviour
     {
         // _motor agora se refere ao componente do tipo PlayerMotor do mesmo GameObject.
         _motor = GetComponent<PlayerMotor>();
+
     }
 
-    // Aqui coletamos o input pelo teclado.
-    void DoKeyboardInput()
+    void OnEnable()
     {
-        _cmd.SwipeDown = Input.GetKeyDown(SwipeDownKey);
-        _cmd.Touch = Input.GetKeyDown(TouchKey);
+        EasyTouch.On_Swipe += OnSwipe;
+        EasyTouch.On_TouchUp += OnTouchUp;
     }
 
-    // Aqui coletamos o input pelo touch.
-    void DoTouchInput()
+    void OnDisable()
     {
+        EasyTouch.On_Swipe -= OnSwipe;
+        EasyTouch.On_TouchUp -= OnTouchUp;
+    }
+
+    void OnDestroy()
+    {
+        EasyTouch.On_Swipe -= OnSwipe;
+        EasyTouch.On_TouchUp -= OnTouchUp;
+    }
+
+    public void OnTouchUp(Gesture gesture)
+    {
+        _canSwipeUp = true;
+    }
+
+    public void OnSwipe(Gesture gesture)
+    {
+        Vector2 swipeDirection = gesture.swipeVector;
         
-    }
-
-    // Estamos passando o nosso input para o motor.
-    void SendInput()
-    {
-        if (_cmd.Touch)
+        if (Mathf.Abs(swipeDirection.y) > Mathf.Abs(swipeDirection.x))
         {
-            _motor.Jump();
-        }
+            if (swipeDirection.y > 0 && _canSwipeUp)
+            {
+                _motor.Jump();
+                _canSwipeUp = false;
+            }
 
-        else if (_cmd.SwipeDown)
-        {
-            _motor.Sink();
+            if (swipeDirection.y < 0)
+            {
+                _motor.Sink();
+            }
         }
-    }
-
-    // Update é chamado sempre que possível.
-    void Update()
-    {
-        _cmd = new PlayerCommand();
-
-        if (UseKeyboard)
-        {
-            DoKeyboardInput();
-        }
-        else
-        {
-            DoTouchInput();
-        }
-
-        SendInput();
     }
 }

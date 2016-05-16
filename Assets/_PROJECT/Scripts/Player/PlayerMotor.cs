@@ -6,6 +6,7 @@ public class PlayerMotor : MonoBehaviour
     public float Acceleration = 5f;
     public float MaxSpeed = 15;
     public float GravityForce = 15f;
+    public bool CanMove = false;
     [Header("Jump Settings")]
     public float JumpForce = 10f;
     public int MidAirJumps = 1;
@@ -23,7 +24,7 @@ public class PlayerMotor : MonoBehaviour
     private bool _isGrounded;
     private bool _canSink;
     private RaycastHit2D _rhit;
-    
+
     private static PlayerMotor _instance;
 
     public static PlayerMotor GetInstance()
@@ -42,6 +43,16 @@ public class PlayerMotor : MonoBehaviour
     public Transform GetTransform()
     {
         return _transform;
+    }
+
+    public bool IsMoving()
+    {
+        return _rigidbody.velocity.x > 0.1f;
+    }
+
+    public bool IsGrounded()
+    {
+        return _isGrounded;
     }
 
     // Estamos no chão? Vamos projetar uma caixa invisível para baixo. Se ela acertar alguma coisa, estamos no chão.
@@ -65,11 +76,14 @@ public class PlayerMotor : MonoBehaviour
     // Vamos aplicar uma força constante para a direita. Se ultrapassarmos o MaxSpeed, vamos travar a velocidade.
     void ApplyConstantForce()
     {
-        _rigidbody.AddForce(Vector2.right * Acceleration, ForceMode2D.Force);
-
-        if (_rigidbody.velocity.x > MaxSpeed)
+        if (CanMove)
         {
-            ClampHorizontalVelocity();
+            _rigidbody.AddForce(Vector2.right * Acceleration, ForceMode2D.Force);
+
+            if (_rigidbody.velocity.x > MaxSpeed)
+            {
+                ClampHorizontalVelocity();
+            }
         }
     }
 
@@ -96,7 +110,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void Jump()
     {
-        if (_timesJumped < MidAirJumps)
+        if (_timesJumped < MidAirJumps && CanMove)
         {
             _timesJumped++;
             Vector2 velocity = _rigidbody.velocity;

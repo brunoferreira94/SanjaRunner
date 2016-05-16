@@ -8,6 +8,8 @@ public class MapBehaviour : MonoBehaviour
     public SpriteRenderer LargerMapSprite;
 
     private static MapBehaviour _instance;
+    private int _unlockedSectors;
+    private int _unlockedLevels;
 
     public static MapBehaviour GetInstance()
     {
@@ -17,6 +19,27 @@ public class MapBehaviour : MonoBehaviour
     void Awake()
     {
         _instance = this;
+    }
+
+    void Start()
+    {
+        _unlockedLevels = PlayerPrefs.GetInt("levels");
+        _unlockedSectors = PlayerPrefs.GetInt("sectors");
+
+        UnlockSectors();
+    }
+
+    void UnlockSectors()
+    {
+        for (int counter = 0; counter < Sectors.Length; counter++)
+        {
+            if (counter <= _unlockedSectors)
+            {
+                Sectors[counter].IsLocked = false;
+                Sectors[counter].UnlockLevels(_unlockedLevels);
+            }
+            Sectors[counter].UpdateLockedStatus();
+        }
     }
 
     public void DisableOtherSectors(SectorBehaviour sector)

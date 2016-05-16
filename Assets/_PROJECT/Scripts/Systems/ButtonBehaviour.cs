@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using DG.Tweening;
 using TMPro;
 
@@ -10,13 +9,8 @@ public class ButtonBehaviour : MonoBehaviour
     public SpriteRenderer ButtonSprite;
     public SpriteRenderer LockSprite;
     public TextMeshPro Text;
-
-    private Collider2D _col;
-
-    void Awake()
-    {
-        _col = GetComponent<Collider2D>();
-    }
+    [Header("Settings")]
+    public string LevelName;
 
     void Start()
     {
@@ -26,30 +20,35 @@ public class ButtonBehaviour : MonoBehaviour
         Text.color = new Color(0, 0, 0, 0);
     }
 
+    public void UpdateStatus()
+    {
+        LockSprite.enabled = IsLocked;
+
+    }
+
     public void Show()
     {
-        if (IsLocked)
-        {
-            LockSprite.enabled = true;
-        }
-        else
-        {
-            LockSprite.enabled = false;
-        }
+        UpdateStatus();
         ButtonSprite.DOColor(new Color(1, 1, 1, 1), 0.25f);
         LockSprite.DOFade(1, 0.25f);
-        Text.DOFade(1, 0.25f);
-        _col.enabled = true;
+        Text.DOColor(new Color(1, 1, 1, 1), 0.25f);
     }
 
     public void Hide()
     {
-        _col.enabled = false;
         ButtonSprite.DOColor(new Color(1, 1, 1, 0), 0.25f);
-        Text.DOFade(0, 0.25f);
+        Text.DOColor(new Color(1, 1, 1, 0), 0.25f);
         LockSprite.DOFade(0, 0.25f).OnComplete(delegate
         {
             gameObject.SetActive(false);
         });
+    }
+
+    void OnMouseDown()
+    {
+        if (!IsLocked)
+        {
+            PersistentBehaviour.GetInstance().ChangeLevel(LevelName, 0.25f);
+        }
     }
 }
