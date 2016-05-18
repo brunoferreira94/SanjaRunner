@@ -16,12 +16,13 @@ public class LevelBehaviour : MonoBehaviour
     [Header("Prefabs")]
     public PlayerMotor PlayerPrefab;
 
+    public bool Debug = true;
+
     private List<CogBehaviour> _cogList;
     private Transform _playerTransform;
     private PlayerMotor _playerMotor;
     private float _levelProgress;
     private int _cogCounter;
-    private bool _hasNote = false;
 
     private static LevelBehaviour _instance;
 
@@ -38,7 +39,7 @@ public class LevelBehaviour : MonoBehaviour
 
     private void Start()
     {
-        _playerMotor = (PlayerMotor) Instantiate(PlayerPrefab, StartPoint.position, Quaternion.identity);
+        _playerMotor = (PlayerMotor)Instantiate(PlayerPrefab, StartPoint.position, Quaternion.identity);
         _playerTransform = _playerMotor.transform;
         CameraBehaviour.GetInstance().TargetTransform = _playerTransform;
 
@@ -64,11 +65,6 @@ public class LevelBehaviour : MonoBehaviour
         HUDBehaviour.GetInstance().SetCogAmount(_cogCounter);
     }
 
-    public void PickupNote()
-    {
-        _hasNote = true;
-    }
-
     // Atualizamos a posição do fundo aqui.
     void UpdateBackground()
     {
@@ -88,15 +84,20 @@ public class LevelBehaviour : MonoBehaviour
 
         if (_levelProgress >= 1)
         {
-            Finish();    
+            Finish();
         }
     }
 
     void Finish()
     {
-        _playerMotor.CanMove = false;
-
-        
+        if (Debug)
+        {
+            _playerTransform.position = StartPoint.position;
+        }
+        else
+        {
+            _playerMotor.CanMove = false;
+        }
     }
 
     public void RestartLevel()

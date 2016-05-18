@@ -40,6 +40,18 @@ public class PlayerInput : MonoBehaviour
         _canSwipeUp = true;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            _motor.Jump();
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            _motor.Sink();
+        }
+    }
+
     public void OnSwipe(Gesture gesture)
     {
         Vector2 swipeDirection = gesture.swipeVector;

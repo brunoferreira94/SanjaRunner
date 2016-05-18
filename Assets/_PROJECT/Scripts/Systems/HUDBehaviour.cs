@@ -13,8 +13,8 @@ public class HUDBehaviour : MonoBehaviour
     public Image CogDisplayCog;
     public TextMeshProUGUI CogsText;
     public TextMeshProUGUI CounterText;
-    public TextMeshProUGUI GameOverText;
-    public RectTransform GameOverPanel;
+    public RectTransform NoteTransform;
+    public TextMeshProUGUI NoteText;
     [Header("Settings")]
     public float HUDTweenTime = 1.5f;
     public float HUDTweenDelay = 1.25f;
@@ -22,8 +22,7 @@ public class HUDBehaviour : MonoBehaviour
 
     private float _initialCogTextSize;
     private float _initialCounterSize;
-    private float _initialGameOverTextSize;
-    private Vector3 _initialGameOverPanelPosition;
+    private Vector3 _initialNotePos;
     private LevelBehaviour _lb;
 
     private static HUDBehaviour _instance;
@@ -43,10 +42,8 @@ public class HUDBehaviour : MonoBehaviour
         CogsText.fontSize = 0;
         _initialCounterSize = CounterText.fontSize;
         CounterText.fontSize = 0;
-        _initialGameOverPanelPosition = GameOverPanel.anchoredPosition3D;
-        GameOverPanel.anchoredPosition3D += new Vector3(0, 2000, 0);
-        _initialGameOverTextSize = GameOverText.fontSize;
-        GameOverText.fontSize = 0;
+        _initialNotePos = NoteTransform.anchoredPosition3D;
+        NoteTransform.anchoredPosition3D += new Vector3(0, 2000, 0);
     }
 
     void Start()
@@ -86,19 +83,21 @@ public class HUDBehaviour : MonoBehaviour
         CogsText.text = amount.ToString();
     }
 
-    public float GetGameOverTextSpacing()
+    public void ShowNote(string noteText)
     {
-        return GameOverText.characterSpacing;
+        NoteTransform.DOAnchorPos3D(_initialNotePos, 1.5f).SetUpdate(true);
+        NoteText.text = noteText;
     }
 
-    public void SetGameOverTextSpacing(float value)
+    public void HideNote()
     {
-        GameOverText.characterSpacing = value;
+        NoteTransform.anchoredPosition3D += Vector3.up * 2000;
+        TimeBehaviour.SetTimeScale(1, 1);
     }
 
     public void Victory()
     {
-        
+
     }
 
 }

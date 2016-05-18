@@ -1,0 +1,304 @@
+-debug
+-target:library
+-nowarn:0169
+-out:Temp/Assembly-CSharp.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:Assets/_PLUGINS/DemigiantDotween/DemiLib/Core/DemiLib.dll
+-r:Assets/_PLUGINS/DemigiantDotween/DOTween/DOTween.dll
+-r:Assets/_PLUGINS/DemigiantDotween/DOTween/DOTween43.dll
+-r:Assets/_PLUGINS/DemigiantDotween/DOTween/DOTween46.dll
+-r:Assets/_PLUGINS/DemigiantDotween/DOTween/DOTween50.dll
+-r:Assets/_PLUGINS/DemigiantDotween/DOTweenPro/DOTweenPro.dll
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_3_4
+-define:UNITY_5_3
+-define:UNITY_5
+-define:ENABLE_NEW_BUGREPORTER
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_FRAME_DEBUGGER
+-define:ENABLE_GENERICS
+-define:ENABLE_HOME_SCREEN
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_LIGHT_PROBES_LEGACY
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_PLUGIN_INSPECTOR
+-define:ENABLE_SHADOWS
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:ENABLE_SPRITERENDERER_FLIPPING
+-define:ENABLE_SPRITES
+-define:ENABLE_SPRITE_POLYGON
+-define:ENABLE_TERRAIN
+-define:ENABLE_RAKNET
+-define:ENABLE_UNET
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_HUB
+-define:ENABLE_CLOUD_PROJECT_ID
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_UNET
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_METRICS
+-define:ENABLE_EDITOR_METRICS_CACHING
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:INCLUDE_IL2CPP
+-define:INCLUDE_DIRECTX12
+-define:PLATFORM_SUPPORTS_MONO
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION
+-define:ENABLE_EDITOR_TESTS_RUNNER
+-define:UNITY_ANDROID
+-define:UNITY_ANDROID_API
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_EGL
+-define:ENABLE_NETWORK
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_LOG_MIXED_STACKTRACE
+-define:ENABLE_UNITYWEBREQUEST
+-define:PLATFORM_SUPPORTS_ADS_ID
+-define:ENABLE_UNITYADS_RUNTIME
+-define:UNITY_UNITYADS_API
+-define:ENABLE_MONO
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:CROSS_PLATFORM_INPUT
+-define:MOBILE_INPUT
+Assets/_PLUGINS/DemigiantDotween/DOTweenPro/DOTweenAnimation.cs
+Assets/_PLUGINS/DemigiantDotween/DOTweenPro/DOTweenTextMeshPro.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/AutoSelect/MultiLayerTouch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/AutoSelect/MultiLayerUI.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/MultiCamera/MultiCameraTouch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/MultiCamera/MultiCameraUI.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RTSExample/CubeSelect.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RTSExample/RTSCamera.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RunBall/Ball.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RunBall/BallRunPlayer.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RunBall/ThirdPersonCamera.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/LoadExamples.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/MultiFinger/FingerTouch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/MultiFinger/MutliFingersScreenTouch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/DoubleTapMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/DragMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/LongTapMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/Swipe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/TapMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger/TouchMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/PinchMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TooglePickMethodUI.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwistMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoDoubleTapMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoDragMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoLongTapMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoSwipe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoTapMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers/TwoTouchMe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/ETWindow.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/GlobalEasyTouchEvent.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/UICompatibility.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility/UIWindow.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UITwistPinch/UIDrag.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UITwistPinch/UIPinch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UITwistPinch/UITwist.cs
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/5.X new features/Script/RTS_NewSyntaxe.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Examples/5.X new features/Script/SimpleActionExample.cs"
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/EasyTouchTrigger.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickBase.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickDrag.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickEnterOverExist.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickLongTap.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickPinch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickSwipe.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickTap.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickTouch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Components/QuickTwist.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Engine/BaseFinger.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Engine/ECamera.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Engine/EasyTouch.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Engine/EasyTouchInput.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Engine/Finger.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Engine/Gesture.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouch/Plugins/Engine/TwoFingerGesture.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Component/ETCSetDirectActionTransform.cs
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Button-Event-Input/ButtonInputUI.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Button-Event-Input/ButtonUIEvent.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/ControlEventInput/ControlUIEvent.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/ControlEventInput/ControlUIInput.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/DPadClassicalTime/DPadParameterUI.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/FPSExample/FPSPlayerControl.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/FPSExample/ImpactEffect.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/JoystickParameter/AxisXUi.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/LoadLevelScript.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/TouchPad-Event-Input/TouchPadUIEvent.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 2.X_New Features/Script/CharacterAnimation.cs"
+"Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/Version 2.X_New Features/Script/CharacterAnimationDungeon.cs"
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Examples/_Medias/SliderText.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ComponentExtensions.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCArea.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCAxis.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCBase.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCButton.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCDPad.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCInput.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCJoystick.cs
+Assets/_PLUGINS/EasyTouchBundle/EasyTouchControls/Plugins/ETCTouchPad.cs
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/Benchmark01.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/Benchmark01_UGUI.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/Benchmark02.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/Benchmark03.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/Benchmark04.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/CameraController.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/FloatingText.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/ObjectSpin.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/ShaderPropAnimator.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/SimpleScript.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TMP_ExampleScript_01.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TMP_FrameRateCounter.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TMP_TextInfoDebugTool.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TMP_TextSelector.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TMP_UiFrameRateCounter.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TMPro_InstructionOverlay.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TeleType.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TextConsoleSimulator.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TextMeshProFloatingText.cs"
+"Assets/_PLUGINS/TextMesh Pro/Examples/Scripts/TextMeshSpawner.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/FastAction.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/InlineGraphic.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/InlineGraphicManager.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/MaterialManager.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_Asset.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_Compatibility.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_FontAsset.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_Settings.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_Sprite.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_SpriteAsset.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_Style.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_StyleSheet.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_Text.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_TextElement.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_TextInfo.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_TextUtilities.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_UpdateManager.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMP_XmlTagStack.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMPro_EventManager.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMPro_ExtensionMethods.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMPro_FontUtilities.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMPro_MeshUtilities.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMPro_Private.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMPro_ShaderUtilities.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TMPro_UGUI_Private.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TextContainer.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TextMeshPro.cs"
+"Assets/_PLUGINS/TextMesh Pro/Scripts/TextMeshProUGUI.cs"
+Assets/_PROJECT/Scripts/Entities/CameraBehaviour.cs
+Assets/_PROJECT/Scripts/Entities/CogBehaviour.cs
+Assets/_PROJECT/Scripts/Entities/LevelBehaviour.cs
+Assets/_PROJECT/Scripts/Entities/PaperBehaviour.cs
+Assets/_PROJECT/Scripts/Entities/PersistentBehaviour.cs
+Assets/_PROJECT/Scripts/Entities/SpriteSwitcher.cs
+Assets/_PROJECT/Scripts/Generic/SimpleRotator.cs
+Assets/_PROJECT/Scripts/Generic/TweenerBehaviourUI.cs
+Assets/_PROJECT/Scripts/Player/PlayerAnimation.cs
+Assets/_PROJECT/Scripts/Player/PlayerInput.cs
+Assets/_PROJECT/Scripts/Player/PlayerMotor.cs
+Assets/_PROJECT/Scripts/Systems/ButtonBehaviour.cs
+Assets/_PROJECT/Scripts/Systems/HUDBehaviour.cs
+Assets/_PROJECT/Scripts/Systems/MapBackgroundCollider.cs
+Assets/_PROJECT/Scripts/Systems/MapBehaviour.cs
+Assets/_PROJECT/Scripts/Systems/MenuBehaviour.cs
+Assets/_PROJECT/Scripts/Systems/SectorBehaviour.cs
+Assets/_PROJECT/Scripts/Systems/TimeBehaviour.cs
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Antialiasing.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Bloom.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/BloomAndFlares.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/BloomOptimized.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Blur.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/BlurOptimized.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/CameraMotionBlur.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ColorCorrectionCurves.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ColorCorrectionLookup.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ColorCorrectionRamp.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ContrastEnhance.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ContrastStretch.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/CreaseShading.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/DepthOfFieldDeprecated.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/EdgeDetection.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Fisheye.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/GlobalFog.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Grayscale.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ImageEffectBase.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ImageEffects.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/MotionBlur.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/NoiseAndGrain.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/NoiseAndScratches.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/PostEffectsBase.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/PostEffectsHelper.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Quads.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ScreenOverlay.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ScreenSpaceAmbientObscurance.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ScreenSpaceAmbientOcclusion.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/ScreenSpaceReflection.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/SepiaTone.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/SunShafts.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/TiltShift.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Tonemapping.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Triangles.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Twirl.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/VignetteAndChromaticAberration.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Effects/ImageEffects/Scripts/Vortex.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/ActivateTrigger.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/AlphaButtonClickMask.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/AutoMobileShaderSwitch.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/AutoMoveAndRotate.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/CameraRefocus.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/CurveControlledBob.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/DragRigidbody.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/DynamicShadowSettings.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/EventSystemChecker.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/FOVKick.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/FPSCounter.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/FollowTarget.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/ForcedReset.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/LerpControlledBob.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/ObjectResetter.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/ParticleSystemDestroyer.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/PlatformSpecificContent.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/SimpleActivatorMenu.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/SimpleMouseRotator.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/SmoothFollow.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/TimedObjectActivator.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/TimedObjectDestructor.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/WaypointCircuit.cs"
+"Assets/_STANDARD ASSETS/Standard Assets/Utility/WaypointProgressTracker.cs"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"

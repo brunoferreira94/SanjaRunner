@@ -17,13 +17,14 @@ public class PlayerMotor : MonoBehaviour
     public LayerMask WorldMask;
     public Vector2 GroundBoxCastSize;
     public float GroundBoxCastDistance;
+    public Rigidbody2D Rigidbody { private set; get; }
 
     private Transform _transform;
-    private Rigidbody2D _rigidbody;
     private int _timesJumped;
     private bool _isGrounded;
     private bool _canSink;
-    private RaycastHit2D _rhit;
+
+    private Collision2D _ground;
 
     private static PlayerMotor _instance;
 
@@ -32,12 +33,28 @@ public class PlayerMotor : MonoBehaviour
         return _instance;
     }
 
+    private Vector2 MoveDirection
+    {
+        get
+        {
+            if (_ground != null)
+            {
+                return _ground.Tangent();
+            }
+
+            return Vector2.right;
+        }
+    }
+
+    private
+
     // Chamado na inicialização.
     void Awake()
     {
         _instance = this;
         _transform = GetComponent<Transform>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        Rigidbody = GetComponent<Rigidbody2D>();
+        Rigidbody.gravityScale = 0;
     }
 
     public Transform GetTransform()
@@ -47,7 +64,7 @@ public class PlayerMotor : MonoBehaviour
 
     public bool IsMoving()
     {
-        return _rigidbody.velocity.x > 0.1f;
+        return Rigidbody.velocity.x > 0.1f;
     }
 
     public bool IsGrounded()
@@ -55,56 +72,55 @@ public class PlayerMotor : MonoBehaviour
         return _isGrounded;
     }
 
-    // Estamos no chão? Vamos projetar uma caixa invisível para baixo. Se ela acertar alguma coisa, estamos no chão.
-    void GroundedCheck()
-    {
-        // BoxCast retorna RaycastHit2D.
-        _rhit = Physics2D.BoxCast(_transform.position, GroundBoxCastSize, 0, Vector2.down, GroundBoxCastDistance,
-            WorldMask);
-
-        // Se BoxCast retornou algo, _isGrounded será TRUE. Caso contrário, será FALSE.
-        _isGrounded = _rhit;
-
-        // Se encostamos no chão, vamos resetar o contador de saltos.
-        if (_isGrounded)
-        {
-            _timesJumped = 0;
-            _canSink = true;
-        }
-    }
 
     // Vamos aplicar uma força constante para a direita. Se ultrapassarmos o MaxSpeed, vamos travar a velocidade.
     void ApplyConstantForce()
     {
         if (CanMove)
         {
-            _rigidbody.AddForce(Vector2.right * Acceleration, ForceMode2D.Force);
+            Debug.Log(_ground != null);
 
-            if (_rigidbody.velocity.x > MaxSpeed)
+            if (_ground != null)
+            {
+                Debug.DrawRay(transform.position, _ground.Tangent() * Acceleration);
+                Debug.DrawRay(transform.position, _ground.Normal() * GravityForce);
+
+
+            }
+
+            Rigidbody.AddForce(MoveDirection * Acceleration, ForceMode2D.Force);
+
+            if (Rigidbody.velocity.x > MaxSpeed)
             {
                 ClampHorizontalVelocity();
             }
+        }
+        else
+        {
+            Vector3 curVel = Rigidbody.velocity;
+            curVel.x = Mathf.Lerp(curVel.x, 0, 0.5f);
+            Rigidbody.velocity = curVel;
         }
     }
 
     // Travando a velocidade...
     void ClampHorizontalVelocity()
     {
-        Vector2 velocity = _rigidbody.velocity;
+        Vector2 velocity = Rigidbody.velocity;
         velocity.x = MaxSpeed;
-        _rigidbody.velocity = velocity;
+        Rigidbody.velocity = velocity;
     }
 
     // Aplicando força gravitacional contra superfície no pé, se ela existir
     void ApplyGravityAgainstSurface()
     {
-        if (_rhit)
+        if (_ground != null)
         {
-            _rigidbody.AddForce(-_rhit.normal * GravityForce);
+            Rigidbody.AddForce(-_ground.Normal() * GravityForce);
         }
         else
         {
-            _rigidbody.AddForce(Vector2.down * GravityForce);
+            Rigidbody.AddForce(Vector2.down * GravityForce);
         }
     }
 
@@ -113,10 +129,37 @@ public class PlayerMotor : MonoBehaviour
         if (_timesJumped < MidAirJumps && CanMove)
         {
             _timesJumped++;
-            Vector2 velocity = _rigidbody.velocity;
+            Vector2 velocity = Rigidbody.velocity;
             velocity.y = JumpForce;
-            _rigidbody.velocity = velocity;
+            Rigidbody.velocity = velocity;
         }
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.Normal().y > .1f)
+        {
+            _ground = null;
+            _isGrounded = false;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.Normal().y > .1f)
+        {
+            _ground = collision;
+            _isGrounded = true;
+
+            _timesJumped = 0;
+            _canSink = true;
+        }
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        OnCollisionEnter2D(collision);
     }
 
     public void Sink()
@@ -124,19 +167,15 @@ public class PlayerMotor : MonoBehaviour
         if (_canSink)
         {
             _canSink = false;
-            Vector2 velocity = _rigidbody.velocity;
+            Vector2 velocity = Rigidbody.velocity;
             velocity.y = -SinkForce;
-            _rigidbody.velocity = velocity;
+            Rigidbody.velocity = velocity;
         }
     }
 
     void FixedUpdate()
     {
-        GroundedCheck();
         ApplyConstantForce();
         ApplyGravityAgainstSurface();
-
-        // Não vamos utilizar a gravidade do Rigidbody.
-        _rigidbody.gravityScale = 0;
     }
 }

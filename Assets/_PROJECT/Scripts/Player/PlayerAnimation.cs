@@ -7,6 +7,10 @@ public class PlayerAnimation : MonoBehaviour
     public Animator Anim;
 
     private PlayerMotor _motor;
+    private readonly int _isRunning = Animator.StringToHash("IsRunning");
+    private readonly int _isGrounded = Animator.StringToHash("IsGrounded");
+    private readonly int _yVelocity = Animator.StringToHash("YVelocity");
+//    private readonly int _land = Animator.StringToHash("Land");
 
     void Awake()
     {
@@ -15,7 +19,8 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        Anim.SetBool("IsRunning", _motor.IsMoving());
-        Anim.SetBool("IsGrounded", _motor.IsGrounded());
+        Anim.SetBool(_isRunning, _motor.IsMoving());
+        Anim.SetBool(_isGrounded, _motor.IsGrounded());
+        Anim.SetFloat(_yVelocity, _motor.Rigidbody.velocity.y);
     }
 }
