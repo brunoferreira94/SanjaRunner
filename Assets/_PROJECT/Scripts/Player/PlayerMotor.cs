@@ -78,8 +78,6 @@ public class PlayerMotor : MonoBehaviour
     {
         if (CanMove)
         {
-            Debug.Log(_ground != null);
-
             if (_ground != null)
             {
                 Debug.DrawRay(transform.position, _ground.Tangent() * Acceleration);
@@ -149,11 +147,16 @@ public class PlayerMotor : MonoBehaviour
         
         if (collision.Normal().y > .1f)
         {
+            Debug.Log(collision.Normal());
             _ground = collision;
             _isGrounded = true;
 
             _timesJumped = 0;
             _canSink = true;
+        }
+        else
+        {
+            Debug.LogAssertion("hooray");
         }
     }
 

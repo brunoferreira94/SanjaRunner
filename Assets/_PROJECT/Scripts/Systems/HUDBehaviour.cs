@@ -15,6 +15,9 @@ public class HUDBehaviour : MonoBehaviour
     public TextMeshProUGUI CounterText;
     public RectTransform NoteTransform;
     public TextMeshProUGUI NoteText;
+    public CanvasGroup GameOverCanvasGroup;
+    public TextMeshProUGUI GameOverCogsText;
+    public TextMeshProUGUI GameOverTimeText;
     [Header("Settings")]
     public float HUDTweenTime = 1.5f;
     public float HUDTweenDelay = 1.25f;
@@ -23,7 +26,6 @@ public class HUDBehaviour : MonoBehaviour
     private float _initialCogTextSize;
     private float _initialCounterSize;
     private Vector3 _initialNotePos;
-    private LevelBehaviour _lb;
 
     private static HUDBehaviour _instance;
 
@@ -44,6 +46,9 @@ public class HUDBehaviour : MonoBehaviour
         CounterText.fontSize = 0;
         _initialNotePos = NoteTransform.anchoredPosition3D;
         NoteTransform.anchoredPosition3D += new Vector3(0, 2000, 0);
+        GameOverCanvasGroup.alpha = 0;
+        GameOverCanvasGroup.blocksRaycasts = true;
+        GameOverCanvasGroup.interactable = true;
     }
 
     void Start()
@@ -97,7 +102,16 @@ public class HUDBehaviour : MonoBehaviour
 
     public void Victory()
     {
+        LevelBehaviour lb = LevelBehaviour.GetInstance();
 
+        GameOverTimeText.text = lb.GetLevelTime().ToString();
+        GameOverCogsText.text = lb.GetAcquiredCogs().ToString();
+
+        GameOverCanvasGroup.DOFade(1, 0.25f).OnComplete(delegate
+        {
+            GameOverCanvasGroup.blocksRaycasts = true;
+            GameOverCanvasGroup.interactable = true;
+        });
     }
 
 }

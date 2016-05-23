@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -83,6 +81,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_DynamicMesh.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_IPath.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_Path.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\Ferr2D_Triangulator.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\P2T.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\DelaunayTriangle.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\AdvancingFront.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\AdvancingFrontNode.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\DTSweep.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\DTSweepBasin.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\DTSweepConstraint.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\DTSweepContext.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\DTSweepDebugContext.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\DTSweepEdgeEvent.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\DTSweepPointComparator.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Delaunay\Sweep\PointOnEdgeException.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\ITriangulatable.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Orientation.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Polygon\Contour.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Polygon\Polygon.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Polygon\PolygonPoint.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Polygon\PolygonSet.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Polygon\PolygonUtil.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Sets\ConstrainedPointSet.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Sets\PointSet.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\TriangulationAlgorithm.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\TriangulationConstraint.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\TriangulationContext.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\TriangulationDebugContext.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\TriangulationMode.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\TriangulationPoint.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Util\PointGenerator.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Util\PolygonGenerator.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Triangulation\Util\TriangulationUtil.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Utility\FixedArray3.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Utility\FixedBitArray3.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Utility\MathUtil.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Utility\Point2D.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Utility\Point2DList.cs" />
+    <Compile Include="Assets\Ferr\2D\Scripts\poly2tri.cs\Utility\Rect2D.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Examples\Assets\BlobShadow.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Examples\Assets\InfiniteTerrain.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Examples\Assets\InfiniteTerrainCamera.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Examples\Assets\ProceduralInsert.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Examples\Assets\Toss.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Examples\Assets\TumbleweedMotion.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Examples\Assets\TumbleweedSpawner.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Scripts\Ferr2DT_PathTerrain.cs" />
+    <Compile Include="Assets\Ferr\2DTerrain\Scripts\Ferr2DT_TerrainMaterial.cs" />
+    <Compile Include="Assets\Ferr\Common\Interfaces\IBlendPaintType.cs" />
+    <Compile Include="Assets\Ferr\Common\Interfaces\IBlendPaintable.cs" />
+    <Compile Include="Assets\Ferr\Common\Interfaces\IProceduralMesh.cs" />
+    <Compile Include="Assets\Ferr\Common\Scripts\ColorUtil.cs" />
+    <Compile Include="Assets\Ferr\Common\Scripts\LambdaComparer.cs" />
+    <Compile Include="Assets\Ferr\Common\Scripts\LayerUtil.cs" />
+    <Compile Include="Assets\Ferr\Common\Scripts\LayoutAdvancer.cs" />
+    <Compile Include="Assets\Ferr\Common\Scripts\LogoLock.cs" />
+    <Compile Include="Assets\Ferr\Common\Scripts\RenderUtility.cs" />
+    <Compile Include="Assets\Ferr\Common\Scripts\SOUtil.cs" />
     <Compile Include="Assets\_PLUGINS\DemigiantDotween\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\_PLUGINS\DemigiantDotween\DOTweenPro\DOTweenTextMeshPro.cs" />
     <Compile Include="Assets\_PLUGINS\EasyTouchBundle\EasyTouch\Examples\4.X\AdvancedExamples\AutoSelect\MultiLayerTouch.cs" />
@@ -304,6 +361,32 @@
     <Compile Include="Assets\_STANDARD ASSETS\Standard Assets\Utility\WaypointProgressTracker.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Ferr\2D\Scripts\poly2tri.cs\AUTHORS.txt" />
+    <None Include="Assets\Ferr\2D\Scripts\poly2tri.cs\LICENSE.txt" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\Ferr2DTCommon.cginc" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\LightmapColored.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\LightmapColoredTransparent.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\LitColored.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\LitColoredTint.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\LitColoredTintTransparent.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\LitColoredTransparent.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\LitWavyTransparent.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\UnitColoredTransparent.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitColored.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitColoredTint.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitColoredTintTransparent.shader" />
+    <None Include="Assets\Ferr\2DTerrain\Shaders\UnlitWavyTransparent.shader" />
+    <None Include="Assets\Ferr\Common\Data\cache.txt" />
+    <None Include="Assets\Ferr\Common\Shaders\GizmoShader2D.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\GizmoShader3D.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\LitVertexColor.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\ShadowOnly.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\UnlitSolidColor.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\UnlitVertexColor.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\UnlitVertexColorTex.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\UnlitVertexColorTexTransparent.shader" />
+    <None Include="Assets\Ferr\Common\Shaders\UnlitVertexColorTransparent.shader" />
+    <None Include="Assets\Ferr\Docs\Ferr2DTerrainTool - Readme.txt" />
     <None Include="Assets\_PLUGINS\DemigiantDotween\DOTween\DOTween.XML" />
     <None Include="Assets\_PLUGINS\DemigiantDotween\DOTween\DOTween43.xml" />
     <None Include="Assets\_PLUGINS\DemigiantDotween\DOTween\DOTween46.xml" />

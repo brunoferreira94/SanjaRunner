@@ -23,6 +23,10 @@ public class LevelBehaviour : MonoBehaviour
     private PlayerMotor _playerMotor;
     private float _levelProgress;
     private int _cogCounter;
+    private float _finishTime;
+    private float _startingTime;
+    private int _totalCogAmount = 0;
+    private bool _hasFinished;
 
     private static LevelBehaviour _instance;
 
@@ -50,12 +54,23 @@ public class LevelBehaviour : MonoBehaviour
         hud.StartCountdown();
     }
 
+    public void StartTimeCounter()
+    {
+        _startingTime = Time.time;
+    }
+
+    public float GetLevelTime()
+    {
+        return _finishTime - _startingTime;
+    }
+
     // Função usada pelas engrenagens: Elas chamam essa função para se adicionarem a lista de engrenagens.
     public void AddCog(CogBehaviour cog)
     {
         _cogList.Add(cog);
         _cogCounter = _cogList.Count;
         HUDBehaviour.GetInstance().SetCogAmount(_cogCounter);
+        _totalCogAmount++;
     }
 
     public void RemoveCog(CogBehaviour cog)
@@ -63,6 +78,11 @@ public class LevelBehaviour : MonoBehaviour
         _cogList.Remove(cog);
         _cogCounter = _cogList.Count;
         HUDBehaviour.GetInstance().SetCogAmount(_cogCounter);
+    }
+
+    public int GetAcquiredCogs()
+    {
+        return _totalCogAmount - _cogCounter;
     }
 
     // Atualizamos a posição do fundo aqui.
@@ -96,7 +116,13 @@ public class LevelBehaviour : MonoBehaviour
         }
         else
         {
-            _playerMotor.CanMove = false;
+            if (!_hasFinished)
+            {
+                _hasFinished = true;
+                _playerMotor.CanMove = false;
+                _finishTime = Time.time;
+                HUDBehaviour.GetInstance().Victory();
+            }
         }
     }
 
@@ -108,6 +134,11 @@ public class LevelBehaviour : MonoBehaviour
     public void GoBackLevelSelection()
     {
         PersistentBehaviour.GetInstance().ChangeLevel(2, 1f);
+    }
+
+    public void DoQuiz()
+    {
+
     }
 
     void Update()
