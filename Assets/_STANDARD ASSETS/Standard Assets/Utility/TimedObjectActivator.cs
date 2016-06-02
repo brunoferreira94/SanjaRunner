@@ -54,10 +54,6 @@ namespace UnityStandardAssets.Utility
                     case Action.Destroy:
                         Destroy(entry.target, entry.delay);
                         break;
-
-                    case Action.ReloadLevel:
-                        StartCoroutine(ReloadLevel(entry));
-                        break;
                 }
             }
         }
@@ -74,13 +70,6 @@ namespace UnityStandardAssets.Utility
         {
             yield return new WaitForSeconds(entry.delay);
             entry.target.SetActive(false);
-        }
-
-
-        private IEnumerator ReloadLevel(Entry entry)
-        {
-            yield return new WaitForSeconds(entry.delay);
-            SceneManager.LoadScene(SceneManager.GetSceneAt(0).path);
         }
     }
 }

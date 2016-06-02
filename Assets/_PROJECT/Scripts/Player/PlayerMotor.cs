@@ -144,25 +144,38 @@ public class PlayerMotor : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if (collision.Normal().y > .1f)
+        if (IsGround(collision))
         {
-            Debug.Log(collision.Normal());
-            _ground = collision;
-            _isGrounded = true;
-
-            _timesJumped = 0;
-            _canSink = true;
-        }
-        else
-        {
-            Debug.LogAssertion("hooray");
+            Vector2 velocity = Rigidbody.velocity;
+            if (velocity.x < 0)
+            {
+                velocity.x = 0;
+                Rigidbody.velocity = velocity;
+            }
+            OnGroundCollision(collision);
         }
     }
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        OnCollisionEnter2D(collision);
+        if (IsGround(collision))
+            OnGroundCollision(collision);
+    }
+
+    void OnGroundCollision(Collision2D collision)
+    {
+        _ground = collision;
+        _isGrounded = true;
+
+        _timesJumped = 0;
+        _canSink = true;
+
+        
+    }
+
+    private bool IsGround(Collision2D collision)
+    {
+        return collision.Normal().y > .1f && collision.MatchTag(Tag.World);
     }
 
     public void Sink()

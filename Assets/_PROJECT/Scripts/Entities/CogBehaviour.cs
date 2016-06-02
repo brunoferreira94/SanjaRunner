@@ -4,6 +4,8 @@ using DG.Tweening;
 public class CogBehaviour : MonoBehaviour
 {
 
+    public float TimeSum = 1f;
+
     private Transform _transform;
     private SimpleRotator _rotator;
 

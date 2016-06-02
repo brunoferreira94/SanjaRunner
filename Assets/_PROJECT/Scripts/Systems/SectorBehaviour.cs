@@ -8,6 +8,8 @@ public class SectorBehaviour : MonoBehaviour
     public bool IsLocked;
     public Vector3 GrowScale;
     public ButtonBehaviour[] Buttons;
+    public Color LockedColor;
+    public Color UnlockedColor;
 
     private Transform _transform;
     //private PersistentBehaviour _pb;
@@ -35,11 +37,11 @@ public class SectorBehaviour : MonoBehaviour
     {
         if (IsLocked)
         {
-            _sprite.color = new Color(0.25f, 0.25f, 0.25f, 1);
+            _sprite.color = LockedColor;
         }
         else
         {
-            _sprite.color = Color.white;
+            _sprite.color = UnlockedColor;
         }
     }
 

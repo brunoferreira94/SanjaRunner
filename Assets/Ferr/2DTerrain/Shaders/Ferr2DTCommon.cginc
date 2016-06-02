@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 //#define UNITY_4
 
 #if defined(UNITY_4)
@@ -59,7 +61,7 @@ VS_OUT vert(appdata_ferr input) {
 	VS_OUT result;
 
 	#if defined(FERR2DT_WAVY)
-	float4 world      = mul(_Object2World, input.vertex);
+	float4 world      = mul(unity_ObjectToWorld, input.vertex);
 	float  waveOffset = (world.x + world.y + world.z) / _PositionScale;
 	float  wave       = (_Time.z + waveOffset) * _WaveSpeed;
 	result.position   = mul(UNITY_MATRIX_MVP, input.vertex + float4(cos(wave) * _WaveSizeX, sin(wave) * _WaveSizeY, 0, 0));

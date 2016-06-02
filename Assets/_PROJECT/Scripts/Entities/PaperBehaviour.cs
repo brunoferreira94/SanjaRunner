@@ -6,6 +6,7 @@ public class PaperBehaviour : MonoBehaviour
 {
 
     public string Note;
+    public float TimeSum;
 
     private Transform _transform;
 
@@ -24,6 +25,7 @@ public class PaperBehaviour : MonoBehaviour
                 Destroy(gameObject);
                 TimeBehaviour.SetTimeScale(0, 1f);
                 HUDBehaviour.GetInstance().ShowNote(Note);
+                LevelBehaviour.GetInstance().TimeLimit += TimeSum;
             });
         }
     }

@@ -76,13 +76,13 @@ public class PersistentBehaviour : MonoBehaviour
     {
         FadeIn(fadeTime, 0.0f);
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene(level);
+        Application.LoadLevel(level);
     }
 
     IEnumerator ChangeLevel_Coroutine(string level, float fadeTime)
     {
         FadeIn(fadeTime, 0.0f);
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene(level);
+        Application.LoadLevel(level);
     }
 }

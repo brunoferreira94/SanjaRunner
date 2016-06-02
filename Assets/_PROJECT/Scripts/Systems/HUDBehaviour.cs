@@ -18,6 +18,8 @@ public class HUDBehaviour : MonoBehaviour
     public CanvasGroup GameOverCanvasGroup;
     public TextMeshProUGUI GameOverCogsText;
     public TextMeshProUGUI GameOverTimeText;
+    public TextMeshProUGUI TimeCounterGame;
+    public TextMeshProUGUI TimeCounterQuiz;
     [Header("Settings")]
     public float HUDTweenTime = 1.5f;
     public float HUDTweenDelay = 1.25f;
@@ -26,6 +28,7 @@ public class HUDBehaviour : MonoBehaviour
     private float _initialCogTextSize;
     private float _initialCounterSize;
     private Vector3 _initialNotePos;
+    private Tweener _timeFlashTween;
 
     private static HUDBehaviour _instance;
 
@@ -73,6 +76,7 @@ public class HUDBehaviour : MonoBehaviour
                 {
                     CounterText.fontSize = 0;
                     PlayerMotor.GetInstance().CanMove = true;
+                    LevelBehaviour.GetInstance().StartTimeCounter();
                 });
             });
         });
@@ -100,11 +104,37 @@ public class HUDBehaviour : MonoBehaviour
         TimeBehaviour.SetTimeScale(1, 1);
     }
 
+    public void SetTimeCounterValue(float value)
+    {
+        TimeCounterGame.text = value.ToString("0.00");
+        TimeCounterQuiz.text = value.ToString("0.00");
+    }
+
+    public void FlashIngameTimer(Color c)
+    {
+        if (_timeFlashTween != null)
+        {
+            _timeFlashTween.Kill();
+        }
+        TimeCounterGame.color = c;
+        _timeFlashTween = TimeCounterGame.DOColor(Color.white, 0.25f);
+    }
+
+    public void FlashQuizTimer(Color c)
+    {
+        if (_timeFlashTween != null)
+        {
+            _timeFlashTween.Kill();
+        }
+        TimeCounterQuiz.color = c;
+        _timeFlashTween = TimeCounterQuiz.DOColor(Color.white, 0.25f);
+    }
+
     public void Victory()
     {
         LevelBehaviour lb = LevelBehaviour.GetInstance();
 
-        GameOverTimeText.text = lb.GetLevelTime().ToString();
+        GameOverTimeText.text = lb.GetLevelTime().ToString("0.00");
         GameOverCogsText.text = lb.GetAcquiredCogs().ToString();
 
         GameOverCanvasGroup.DOFade(1, 0.25f).OnComplete(delegate
