@@ -1,2 +1,124 @@
-Base path: C:/Program Files/Unity 5.4.0b16/Editor/Data
+Base path: C:/Program Files/Unity 5.4.0b17/Editor/Data
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=8361 outsize=2043 ok=1
+Cmd: preprocess
+  insize=632 outsize=483 ok=1
+Cmd: preprocess
+  insize=9585 outsize=798 ok=1
+Cmd: preprocess
+  insize=1624 outsize=334 ok=1
+Cmd: preprocess
+  error: 2 plat 18 at (27): Can't find include file LitCommon.cginc
+  error: 2 plat 18 at (43): Can't find include file LitCommon.cginc
+  insize=1065 outsize=690 ok=0
+Cmd: preprocess
+  insize=844 outsize=330 ok=1
+Cmd: preprocess
+  insize=964 outsize=629 ok=1
+Cmd: preprocess
+  insize=1241 outsize=387 ok=1
+Cmd: preprocess
+  insize=777 outsize=603 ok=1
+Cmd: preprocess
+  insize=3521 outsize=640 ok=1
+Cmd: preprocess
+  insize=571 outsize=421 ok=1
+Cmd: preprocess
+  insize=3569 outsize=2841 ok=1
+Cmd: preprocess
+  insize=1164 outsize=384 ok=1
+Cmd: preprocess
+  insize=6511 outsize=781 ok=1
+Cmd: preprocess
+  insize=9816 outsize=3673 ok=1
+Cmd: preprocess
+  insize=1054 outsize=698 ok=1
+Cmd: preprocess
+  insize=726 outsize=575 ok=1
+Cmd: preprocess
+  insize=1188 outsize=255 ok=1
+Cmd: preprocess
+  insize=1344 outsize=330 ok=1
+Cmd: preprocess
+  insize=1187 outsize=304 ok=1
+Cmd: preprocess
+  insize=2235 outsize=619 ok=1
+Cmd: preprocess
+  insize=902 outsize=252 ok=1
+Cmd: preprocess
+  insize=903 outsize=570 ok=1
+Cmd: preprocess
+  insize=636 outsize=302 ok=1
+Cmd: preprocess
+  insize=5924 outsize=973 ok=1
+Cmd: preprocess
+  insize=981 outsize=626 ok=1
+Cmd: preprocess
+  insize=1154 outsize=242 ok=1
+Cmd: preprocess
+  insize=4302 outsize=504 ok=1
+Cmd: preprocess
+  insize=992 outsize=248 ok=1
+Cmd: preprocess
+  error: 2 plat 18 at (26): Can't find include file LitCommon.cginc
+  error: 2 plat 18 at (42): Can't find include file LitCommon.cginc
+  insize=974 outsize=599 ok=0
+Cmd: preprocess
+  insize=33644 outsize=2276 ok=1
+Cmd: preprocess
+  insize=515 outsize=390 ok=1
+Cmd: preprocess
+  insize=12787 outsize=1859 ok=1
+Cmd: preprocess
+  insize=963 outsize=333 ok=1
+Cmd: preprocess
+  insize=6023 outsize=731 ok=1
+Cmd: preprocess
+  insize=2705 outsize=762 ok=1
+Cmd: preprocess
+  insize=4394 outsize=3924 ok=1
+Cmd: preprocess
+  insize=10750 outsize=2530 ok=1
+Cmd: preprocess
+  insize=1909 outsize=438 ok=1
+Cmd: preprocess
+  insize=6561 outsize=2221 ok=1
+Cmd: preprocess
+  insize=3938 outsize=531 ok=1
+Cmd: preprocess
+  insize=965 outsize=333 ok=1
+Cmd: preprocess
+  insize=1082 outsize=404 ok=1
+Cmd: preprocess
+  insize=673 outsize=248 ok=1
+Cmd: preprocess
+  insize=7778 outsize=2751 ok=1
+Cmd: preprocess
+  insize=4641 outsize=4056 ok=1
+Cmd: preprocess
+  insize=2235 outsize=1502 ok=1
+Cmd: preprocess
+  insize=4608 outsize=887 ok=1
+Cmd: preprocess
+  insize=716 outsize=286 ok=1
+Cmd: preprocess
+  insize=656 outsize=299 ok=1
+Cmd: preprocess
+  insize=10807 outsize=4131 ok=1
+Cmd: preprocess
+  insize=799 outsize=276 ok=1
+Cmd: preprocess
+  insize=2015 outsize=946 ok=1
+Cmd: preprocess
+  insize=3665 outsize=1333 ok=1
+Cmd: preprocess
+  insize=5095 outsize=700 ok=1
+Cmd: preprocess
+  insize=1139 outsize=364 ok=1
+Cmd: preprocess
+  insize=512 outsize=241 ok=1
+Cmd: preprocess
+  insize=549 outsize=425 ok=1
+Cmd: preprocess
+  insize=4798 outsize=866 ok=1
